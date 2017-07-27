@@ -2,7 +2,7 @@
 
 var myOrders = [];
 
-function Order (productList, qty, name, address, city, state, zipcode, phone, creditCard){
+function Orders (productList, qty, name, address, city, state, zipcode, phone, creditCard){
   this.productList = productList;
   this.qty = qty;
   this.Name = name;
@@ -46,10 +46,25 @@ for(var n = 0; n < Product.allNames.length; n++){
   document.getElementById('productList').appendChild(optionEl);
 }//POPULATE DROPDOWN PRODUCT LIST
 
-function handleAddToCart() {
-  new Order();
+//productList, qty, name, address, city, state, zipcode, phone, creditCard
+function handleAddToCart(event) {
+  event.preventDefault();
+  // if(!event.target.stand.value || !event.target.minCustPerHr.value || !event.target.maxCustPerHr.value || !event.target.avgCookiesPerCust.value) {
+  //   return alert('Fields cannot be empty!');
+  // };
+  var productList = event.target.productList.value;
+  var qty = event.target.qty.value;
+  var name = event.target.name.value;
+  var address = event.target.address.value;
+  var city = event.target.city.value;
+  var state = event.target.state.value;
+  var zipCode = event.target.zipCode.value;
+  var phone = event.target.phone.value;
+  var creditCard = event.target.creditCard.value;
+  new Orders(productList, qty, name, address, city, state, zipCode, phone, creditCard);
+
   localStorage.setItem('myOrders', JSON.stringify(myOrders));
   document.getElementById('newOrderForm').reset();
 };
 
-document.getElementById('addToCart').addEventListener('submit', handleAddToCart);
+document.getElementById('newOrderForm').addEventListener('submit', handleAddToCart);
