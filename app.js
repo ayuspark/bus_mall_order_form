@@ -2,7 +2,7 @@
 
 var myOrders = [];
 
-var Order = function(productList, qty, name, address, city, state, zipcode, phone, creditCard){
+function Order (productList, qty, name, address, city, state, zipcode, phone, creditCard){
   this.productList = productList;
   this.qty = qty;
   this.Name = name;
@@ -45,3 +45,11 @@ for(var n = 0; n < Product.allNames.length; n++){
   optionEl.textContent = Product.allNames[n];
   document.getElementById('productList').appendChild(optionEl);
 }//POPULATE DROPDOWN PRODUCT LIST
+
+function handleAddToCart() {
+  new Order();
+  localStorage.setItem('myOrders', JSON.stringify(myOrders));
+  document.getElementById('newOrderForm').reset();
+};
+
+document.getElementById('addToCart').addEventListener('submit', handleAddToCart);
