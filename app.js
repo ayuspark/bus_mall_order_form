@@ -5,7 +5,7 @@ var myOrders = [];
 function Orders (productList, qty, name, address, city, state, zipcode, phone, creditCard){
   this.productList = productList;
   this.qty = qty;
-  this.Name = name;
+  this.name = name;
   this.address = address;
   this.city = city;
   this.state = state;
@@ -26,7 +26,7 @@ function Orders (productList, qty, name, address, city, state, zipcode, phone, c
 //PRODUCT CONSTRUCTOR
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function Product(name) {
-  this.name = name;
+  this.name = name;//this is the img name
   this.source = 'img/' + this.name + '.jpg';
   this.qty = 0;
   Product.all.push(this);
@@ -64,6 +64,7 @@ function handleAddToCart(event) {
   new Orders(productList, qty, name, address, city, state, zipCode, phone, creditCard);
 
   localStorage.setItem('myOrders', JSON.stringify(myOrders));
+  localStorage.setItem('Product.all', JSON.stringify(Product.all));
   document.getElementById('newOrderForm').reset();
 };
 

@@ -2,3 +2,8 @@
   outline: 1px dashed skyblue;
   box-sizing: border-box;
 }
+
+img {
+  height: 100px;
+  width:  100px;
+}
