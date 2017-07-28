@@ -1,14 +1,14 @@
 'use strict';
 
-var orderedProduct = [];
 var productAll = [];
+var orderedProduct = [];
+var userOrder = [];
+
 if(localStorage){
   orderedProduct = JSON.parse(localStorage.getItem('myOrders'));
   productAll = JSON.parse(localStorage.getItem('Product.all'));
 }
-//USER INFO
-// for(var n = 0; n < orderedProduct.length; n++){
-var userOrder = [];
+
 var userName = prompt('What\'s your name?').toLowerCase();
 
 orderedProduct.forEach(function(element){
@@ -16,13 +16,10 @@ orderedProduct.forEach(function(element){
     userOrder.push(element);
   }
 });
-  // var liEl = document.createElement('li');
-  // var spEl = document.createElement('span');
-  // var imgEl = document.createElement('img');
 
-document.getElementById('user_name').textContent = 'Hello: ' + userOrder[0].name.toUpperCase() + '!';
+document.getElementById('user_name').textContent = 'Hello, ' + userOrder[0].name.toUpperCase() + '!';
 document.getElementById('address').textContent = userOrder[0].address;
-document.getElementById('city_etc').textContent = userOrder[0].city + ' ' + userOrder[0].state + ' ' + userOrder[0].zipCode;
+document.getElementById('city_etc').textContent = userOrder[0].city + ' ' + userOrder[0].state + ' ' + userOrder[0].zipcode;
 document.getElementById('phone').textContent = userOrder[0].phone;
 
 //ORDERS
@@ -49,11 +46,13 @@ for(var i = 0; i < userOrder.length; i++){
 }
 
 function deleteItem(e){
-  // userOrder.forEach(function(el){
-    // if(e.target.id = el.name){
-      document.getElementById('order_list').removeChild(document.getElementById(e.target.id));
-    // }
-  // })
+  document.getElementById('order_list').removeChild(document.getElementById(e.target.id));
+  for(var i = 0; i < userOrder.length; i++){
+    if(userOrder[i].productList === e.target.id){
+      userOrder.splice(i, 1);
+    }
+  }
+  localStorage.setItem('myOrders', JSON.stringify(userOrder))
 }
 
 document.getElementById('order_list').addEventListener('click', deleteItem);
