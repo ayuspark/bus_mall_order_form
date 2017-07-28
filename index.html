@@ -6,55 +6,57 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
-    <form id="newOrderForm">
-      <fieldset class="orderFieldset">
-      <legend>Order Your Buss Mall Products</legend>
-      <ul>
-        <li>
-          <label>Choose Your Product</label>
-          <select id="productList">
-            <option>Please Select an Item</option>
-          </select>
+    <section>
+      <form id="newOrderForm">
+        <fieldset class="orderFieldset">
+        <legend>Order Your Buss Mall Products</legend>
+          <ul>
+            <li>
+              <label>Choose Your Product</label>
+              <select id="productList">
+                <option>Please Select an Item</option>
+              </select>
 
-          <label for="qty">Quantity</label>
-          <input name="qty" type="number" />
-        </li>
-      </br>
-        <li>
-          <label for="name" placeholder="Name">Name</label>
-          <input name="name" type="text" />
+              <label for="qty">Quantity</label>
+              <input name="qty" type="number" />
+            </li>
+          </br>
+            <li>
+              <label for="name">Name</label>
+              <input name="name" type="text" placeholder="Name" />
 
-          <label for="address" placeholder="Address">Address</label>
-          <input name="address" type="text" />
-        </li>
+              <label for="address">Address</label>
+              <input name="address" type="text" placeholder="Address" />
+            </li>
 
-        <li>
-          <label for="city" placeholder="City">City</label>
-          <input name="city" type="text" />
+            <li>
+              <label for="city">City</label>
+              <input name="city" type="text" placeholder="City" />
 
-          <label for="state">State</label>
-          <input name="state" type="text" />
+              <label for="state">State</label>
+              <input name="state" type="text" placeholder="State" />
 
-          <label for="zipCode">Zip Code</label>
-          <input name="zipCode" type="text" />
-        </li>
-      </br>
-        <li>
-          <label for="phone" placeholder="XXX-XXX-XXXX">Phone Number</label>
-          <input name="phone" type="text" />
-        </li>
+              <label for="zipCode">Zip Code</label>
+              <input name="zipCode" type="text" placeholder="12345" size="5" />
+            </li>
+          </br>
+            <li>
+              <label for="phone">Phone Number</label>
+              <input name="phone" type="text" placeholder="XXX-XXX-XXXX" size='10' />
+            </li>
 
-        <li>
-          <label for="creditCard" placeholder="XXXX XXXX XXXX XXXX">Credit Card Number</label>
-          <input name="creditCard" type="text" />
-        </li>
-      </br>
-        <li>
-          <button id="addToCart" type="submit">Add To Cart</button>
-          <button id="goToCart" class="go_to_cart" type="submit"><a href="cart.html" target="_blank">View Cart</a></button>
-        </li>
-    </fieldset>
-  </form>
+            <li>
+              <label for="creditCard">Credit Card Number</label>
+              <input name="creditCard" type="text"  placeholder="XXXX-XXXX-XXXX-XXXX" size='16' />
+            </li>
+          </br>
+            <li>
+            <button id="addToCart" type="submit">Add To Cart</button>
+            <button id="goToCart" class="go_to_cart" type="submit"><a href="cart.html" target="_blank">View Cart</a></button>
+          </li>
+        </fieldset>
+      </form>
+    </section>
   <script type="application/javascript" src="app.js"></script>
   </body>
 </html>
