@@ -1,1 +1,29 @@
+fieldset {
+  width: 700px;
+  height: auto;
+  line-height: 24px
+}
+form {
+  width: 700px;
+  height: auto;
+}
+ul {
+  list-style-type: none;
+}
+li{
+  line-height: 32px;
+}
 
+button {
+  font-weight: bold;
+  font-size: 24px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: orange;
+  float: right;
+  margin: 10px;
+}
+input {
+  border: 1px solid black;
+}

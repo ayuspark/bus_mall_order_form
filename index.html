@@ -9,38 +9,50 @@
     <form id="newOrderForm">
       <fieldset class="orderFieldset">
       <legend>Order Your Buss Mall Products</legend>
+      <ul>
+        <li>
+          <label>Choose Your Product</label>
+          <select id="productList">
+            <option>Please Select an Item</option>
+          </select>
 
-      <label>Choose Your Product</label>
-      <select id="productList">
+          <label for="qty">Quantity</label>
+          <input name="qty" type="number" />
+        </li>
+      </br>
+        <li>
+          <label for="name" placeholder="Name">Name</label>
+          <input name="name" type="text" />
 
-      </select>
+          <label for="address" placeholder="Address">Address</label>
+          <input name="address" type="text" />
+        </li>
 
-      <label for="qty">Quantity</label>
-      <input name="qty" type="number" />
+        <li>
+          <label for="city" placeholder="City">City</label>
+          <input name="city" type="text" />
 
-      <label for="name">Name</label>
-      <input name="name" type="text" />
+          <label for="state">State</label>
+          <input name="state" type="text" />
 
-      <label for="address">Address</label>
-      <input name="address" type="text" />
+          <label for="zipCode">Zip Code</label>
+          <input name="zipCode" type="text" />
+        </li>
+      </br>
+        <li>
+          <label for="phone" placeholder="XXX-XXX-XXXX">Phone Number</label>
+          <input name="phone" type="text" />
+        </li>
 
-      <label for="city">City</label>
-      <input name="city" type="text" />
-
-      <label for="state">State</label>
-      <input name="state" type="text" />
-
-      <label for="zipCode">Zip Code</label>
-      <input name="zipCode" type="text" />
-
-      <label for="phone">Phone Number</label>
-      <input name="phone" type="text" />
-
-      <label for="creditCard">Credit Card Number</label>
-      <input name="creditCard" type="text" />
-
-
-      <button id="addToCart" type="submit">Add To Cart</button>
+        <li>
+          <label for="creditCard" placeholder="XXXX XXXX XXXX XXXX">Credit Card Number</label>
+          <input name="creditCard" type="text" />
+        </li>
+      </br>
+        <li>
+          <button id="addToCart" type="submit">Add To Cart</button>
+          <button id="goToCart" class="go_to_cart" type="submit">View Cart</button>
+        </li>
     </fieldset>
   </form>
   <script type="application/javascript" src="app.js"></script>
